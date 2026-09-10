@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngôi Làng Bình Yên 3D (Peaceful Village 3D)</title>
+  <link rel="stylesheet" href="./src/style.css">
+  
+  <!-- Importmap cho Three.js & Addons hỗ trợ chạy trực tiếp trên trình duyệt -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Màn hình tải khởi tạo -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Đang tạo dựng ngôi làng bình yên...</div>
+  </div>
+
+  <!-- 3D Canvas Viewport -->
+  <div id="canvas-container"></div>
+
+  <!-- Giao diện Glassmorphism HUD -->
+  <div id="ui-overlay">
+    <!-- Thanh điều khiển phía trên -->
+    <header class="top-bar">
+      <div class="brand-card glass-panel">
+        <h1>🏡 Ngôi Làng Bình Yên</h1>
+        <p>Không gian Low-Poly & Ghibli thư giãn</p>
+      </div>
+
+      <div class="top-controls">
+        <!-- Chuyển đổi Thời gian trong ngày -->
+        <div class="control-group glass-panel">
+          <button class="time-btn active" data-time="day" title="Ban ngày trong lành">☀️ Ngày</button>
+          <button class="time-btn" data-time="sunset" title="Hoàng hôn mật ong">🌇 Hoàng Hôn</button>
+          <button class="time-btn" data-time="night" title="Đêm ngắm sao trăng">🌙 Đêm</button>
+        </div>
+
+        <!-- Điều khiển Âm thanh Thư giãn -->
+        <div class="control-group glass-panel">
+          <button id="btn-audio" class="action-btn" title="Bật/Tắt âm thanh thiên nhiên">
+            <span id="audio-icon">🔇</span>
+            <span id="audio-text">Âm thanh</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Thanh điều khiển góc nhìn Camera phía dưới -->
+    <footer class="bottom-bar">
+      <div class="pov-controls glass-panel">
+        <button class="pov-btn active" data-pov="overview">🌐 Toàn Cảnh</button>
+        <button class="pov-btn" data-pov="windmill">💨 Cối Xay Gió</button>
+        <button class="pov-btn" data-pov="bridge">🌉 Bến Cầu</button>
+        <button class="pov-btn" data-pov="farm">🐑 Nông Trại</button>
+      </div>
+
+      <div class="hint-badge glass-panel">
+        <span>💡 <b>Thao tác:</b> Kéo chuột trái để xoay • Cuộn để phóng to/thu nhỏ • Click vào vật nuôi để chơi đùa</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Bong bóng đối thoại 3D -->
+  <div id="speech-bubble" class="glass-panel"></div>
+
+  <!-- Điểm nạp mã nguồn chính -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

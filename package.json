@@ -1,0 +1,17 @@
+{
+  "name": "peaceful-village-3d",
+  "version": "1.0.0",
+  "description": "A peaceful interactive 3D diorama village built with Three.js and procedural low-poly art",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "vite": "^5.1.0"
+  }
+}
